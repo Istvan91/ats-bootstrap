@@ -9,7 +9,8 @@
   outputs = { self, nixpkgs, flake-utils, ats3-source, ... }:
     flake-utils.lib.eachDefaultSystem
       (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
         in
         rec {
           packages =
@@ -23,7 +24,19 @@
                 ats3-source = ats3-source;
               };
             };
-
           legacyPackages = packages;
+
+          overlay = prev: final: packages;
+
+          # apps = pkgs.lib.mapAttrs
+          #   (n: v: flake-utils.lib.mkApp {
+          #     drv = v;
+          #   })
+          #   packages;
+          # {
+          #   ats = packages.ats;
+          #   ats2 = packages.ats2;
+          #   ats3 = packages.ats3;
+          # };
         });
 }
