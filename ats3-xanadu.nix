@@ -10,9 +10,9 @@
 , makeWrapper
 , stdenv
 }:
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "ats3";
-  version = "0.0.1-alpha";
+  version = lib.fileContents "${ats3-source}/VERSION";
 
   buildInputs = [ gmp boehmgc ];
   nativeBuildInputs = [
