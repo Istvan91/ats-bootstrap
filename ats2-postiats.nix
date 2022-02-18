@@ -1,5 +1,5 @@
 { lib
-, ats-anairiats
+, ats
 , autoconf
 , automake
 , bash
@@ -11,7 +11,7 @@
 , withEmacs ? true
 }:
 stdenv.mkDerivation rec {
-  pname = "ats2-postiats";
+  pname = "ats2";
   version = "0.4.2";
 
   src = fetchFromGitHub {
@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     autoconf
     automake
-    ats-anairiats
+    ats
     makeWrapper
   ];
 

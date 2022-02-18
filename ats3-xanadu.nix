@@ -1,6 +1,6 @@
 { lib
 , ats3-source
-, ats-postiats
+, ats2
 , autoconf
 , automake
 , bash
@@ -11,14 +11,14 @@
 , stdenv
 }:
 stdenv.mkDerivation rec {
-  pname = "ats3-xanadu";
+  pname = "ats3";
   version = "0.0.1-alpha";
 
   buildInputs = [ gmp boehmgc ];
   nativeBuildInputs = [
     autoconf
     automake
-    ats-postiats
+    ats2
     makeWrapper
   ];
 

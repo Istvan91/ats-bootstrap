@@ -10,7 +10,7 @@
 , withContrib ? true
 }:
 stdenv.mkDerivation rec {
-  pname = "ats-anairiats";
+  pname = "ats";
   version = "0.2.12";
 
   buildInputs = [ gmp ];

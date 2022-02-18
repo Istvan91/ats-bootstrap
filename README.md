@@ -21,6 +21,4 @@ nix with flake support is required (version >=2.4).
 ```cli
 # current master
 nix shell github:Istvan91/ats-bootstrap/#ats3
-# use ats2 with its long name:
-nix shell github:Istvan91/ats-bootstrap/#ats-postiats
 ```

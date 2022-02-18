@@ -14,17 +14,14 @@
         rec {
           packages =
             with pkgs; rec {
-              ats-anairiats = callPackage ./ats1-anairiats.nix { };
-              ats-postiats = callPackage ./ats2-postiats.nix {
-                ats-anairiats = ats-anairiats;
+              ats = callPackage ./ats1-anairiats.nix { };
+              ats2 = callPackage ./ats2-postiats.nix {
+                ats = ats;
               };
-              ats-xanadu = callPackage ./ats3-xanadu.nix {
-                ats-postiats = ats-postiats;
+              ats3 = callPackage ./ats3-xanadu.nix {
+                ats2 = ats2;
                 ats3-source = ats3-source;
               };
-              ats = ats-anairiats;
-              ats2 = ats-postiats;
-              ats3 = ats-xanadu;
             };
 
           legacyPackages = packages;
